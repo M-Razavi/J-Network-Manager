@@ -168,7 +168,6 @@ public class TestNetClientEvents implements NetClientEventsListener {
     org.junit.Assert.assertSame(client, sender);
     // org.junit.Assert.assertTrue(false);
     if (data != null) {
-      assert (data instanceof NetData);
       org.junit.Assert.assertEquals(testConnectMessage, ((String) data));
     }
   }

@@ -1,6 +1,6 @@
 # J Network Manager
 
-[![Build Status](https://travis-ci.org/M-Razavi/J-Network-Manager.svg?branch=master)](https://travis-ci.org/casbin/jcasbin)
+[![Build Status](https://travis-ci.com/M-Razavi/J-Network-Manager.svg?branch=master)](https://travis-ci.com/M-Razavi/J-Network-Manager)
 [![Coverage Status](https://coveralls.io/repos/github/M-Razavi/J-Network-Manager/badge.svg?branch=master)](https://coveralls.io/github/M-Razavi/J-Network-Manager?branch=master)
 
 The NetworkManager Manages NetConnection for all needed connections in each application.
