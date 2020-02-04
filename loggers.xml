@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- File Appender -->
+        <File name="File" fileName="hibernate.log">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+		<!-- Rolling File Appender -->
+		<RollingFile name="LogToRollingFile" fileName="logs/app.log" filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="alg" level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Logger name="app" level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Logger name="net" level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Logger name="pkt" level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Logger name="flow" level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogToRollingFile"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
